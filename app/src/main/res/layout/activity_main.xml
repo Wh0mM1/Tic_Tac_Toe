@@ -169,17 +169,6 @@
         app:layout_constraintVertical_bias="0.583"
         app:srcCompat="@drawable/grey" />
 
-    <Button
-        android:id="@+id/rebuild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="rebuild"
-        android:text="rebuild"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
     <LinearLayout
         android:id="@+id/playAgainLayout"
         android:layout_width="wrap_content"

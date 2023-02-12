@@ -102,21 +102,18 @@ class MainActivity extends AppCompatActivity
         if (gameState[0] == gameState[1] && gameState[1] == gameState[2] && (gameState[2] == 1 || gameState[2] == 0))
         {
             System.out.println("wOwwwwr1");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             num=gameState[2];
             winnn=true;
         }
         if (gameState[3] == gameState[4] && gameState[4] == gameState[5] && (gameState[3] == 1 || gameState[3] == 0))
         {
             System.out.println("wOwwwwr2");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[3];
         }
         if (gameState[6] == gameState[7] && gameState[7] == gameState[8] && (gameState[6] == 1 || gameState[6] == 0))
         {
             System.out.println("wOwwwwr3");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[6];
         }
@@ -124,14 +121,12 @@ class MainActivity extends AppCompatActivity
         if (gameState[0] == gameState[4] && gameState[4] == gameState[8] && (gameState[0] == 1 || gameState[0] == 0))
         {
             System.out.println("wOwwwwd1");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[0];
         }
         if (gameState[2] == gameState[4] && gameState[4] == gameState[6] && (gameState[2] == 1 || gameState[2] == 0))
         {
             System.out.println("wOwwwwd2");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[2];
         }
@@ -139,24 +134,22 @@ class MainActivity extends AppCompatActivity
         if (gameState[0] == gameState[3] && gameState[3] == gameState[6] && (gameState[0] == 1 || gameState[0] == 0))
         {
             System.out.println("wOwwwwv1");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[0];
         }
         if (gameState[1] == gameState[4] && gameState[4] == gameState[7] && (gameState[1] == 1 || gameState[1] == 0))
         {
             System.out.println("wOwwwwv2");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[1];
         }
         if (gameState[2] == gameState[5] && gameState[5] == gameState[8] && (gameState[2] == 1 || gameState[2] == 0))
         {
             System.out.println("wOwwwwv3");
-            Toast.makeText(MainActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
             winnn=true;
             num=gameState[2];
         }
+
         if(winnn==true)
         {
             String winner="O";
@@ -168,6 +161,24 @@ class MainActivity extends AppCompatActivity
             }
             winnerMessage.setText(winner+" has won!");
             layout.setVisibility(View.VISIBLE);
+            System.out.println("layout");
+        }
+        boolean all=false;
+        for(int i=0;i<9;i++)
+        {
+            if(gameState[i]==2)
+            {
+                all=true;
+                break;
+            }
+        }
+        if(all==false)
+        {
+            LinearLayout layout=(LinearLayout) findViewById(R.id.playAgainLayout);
+            TextView winnerMessage=(TextView) findViewById(R.id.woncan);
+            winnerMessage.setText("Boys Played Well!");
+            layout.setVisibility(View.VISIBLE);
+            Toast.makeText(MainActivity.this,"Draw",Toast.LENGTH_SHORT).show();
             System.out.println("layout");
         }
     }
